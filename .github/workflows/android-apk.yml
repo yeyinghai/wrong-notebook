@@ -27,9 +27,6 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - name: Install ImageMagick
-        run: sudo apt-get update && sudo apt-get install -y imagemagick
-
       - name: Install Capacitor
         run: npm install
 
