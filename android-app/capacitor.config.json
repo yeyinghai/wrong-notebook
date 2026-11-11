@@ -1,0 +1,9 @@
+{
+  "appId": "com.yeyhome.wrongnotebook",
+  "appName": "错题本",
+  "webDir": "www",
+  "server": {
+    "url": "https://wrong.yeyhome.com:8666",
+    "allowNavigation": ["wrong.yeyhome.com"]
+  }
+}

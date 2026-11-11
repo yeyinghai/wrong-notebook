@@ -1,0 +1,11 @@
+{
+  "name": "wrong-notebook-android",
+  "private": true,
+  "version": "1.0.0",
+  "description": "错题本安卓壳：用 Capacitor 加载自部署的 Web 端",
+  "dependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/cli": "^8.0.0",
+    "@capacitor/core": "^8.0.0"
+  }
+}
