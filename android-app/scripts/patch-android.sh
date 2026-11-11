@@ -6,14 +6,12 @@ MANIFEST=android/app/src/main/AndroidManifest.xml
 grep -q 'android.permission.CAMERA' "$MANIFEST" || \
   sed -i 's#<uses-permission android:name="android.permission.INTERNET" />#&\n    <uses-permission android:name="android.permission.CAMERA" />#' "$MANIFEST"
 
-ICON=../public/icons/icon.png
-if command -v magick >/dev/null; then IM=magick; else IM=convert; fi
 RES=android/app/src/main/res
 rm -rf "$RES/mipmap-anydpi-v26"
-for pair in mdpi:48 hdpi:72 xhdpi:96 xxhdpi:144 xxxhdpi:192; do
-  d=${pair%%:*}; s=${pair##*:}
+# 图标已按各密度预先缩放好，放在 icons/ 下（源图 ../public/icons/icon.png）
+for d in mdpi hdpi xhdpi xxhdpi xxxhdpi; do
   mkdir -p "$RES/mipmap-$d"
-  $IM "$ICON" -resize ${s}x${s} "$RES/mipmap-$d/ic_launcher.png"
-  cp "$RES/mipmap-$d/ic_launcher.png" "$RES/mipmap-$d/ic_launcher_round.png"
+  cp "icons/ic_launcher-$d.png" "$RES/mipmap-$d/ic_launcher.png"
+  cp "icons/ic_launcher-$d.png" "$RES/mipmap-$d/ic_launcher_round.png"
   rm -f "$RES/mipmap-$d/ic_launcher_foreground.png"
 done

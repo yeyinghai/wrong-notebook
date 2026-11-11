@@ -5,7 +5,6 @@ on:
     branches: [android]
     paths:
       - 'android-app/**'
-      - 'public/icons/**'
       - '.github/workflows/android-apk.yml'
   workflow_dispatch:
 
